@@ -1,0 +1,50 @@
+% set colors for different elements
+
+\mode<presentation>
+
+\DeclareOptionBeamer{style}{\def\beamer@simple@style{#1}}
+\ExecuteOptionsBeamer{style=light} % light will be default if nothing is given
+\ProcessOptionsBeamer
+
+\def\beamer@simple@stylelight{light}%
+\def\beamer@simple@styledark{dark}%
+
+\ifx\beamer@simple@style\beamer@simple@stylelight%
+    \definecolor{TitleColor}{HTML}{1093A7}
+	\definecolor{BodyColor}{HTML}{24454C}
+	\definecolor{AlertColor}{HTML}{DA4D45}
+\else% 
+	%\definecolor{TitleColor}{HTML}{DCDCDC}
+	\definecolor{TitleColor}{HTML}{FFF0F5}
+	\definecolor{BodyColor}{HTML}{FFFFFF}
+	\definecolor{AlertColor}{HTML}{DA4D45}
+\fi%
+
+
+%\definecolor{TitleColor}{HTML}{DCDCDC}
+%\definecolor{BodyColor}{HTML}{FFFFFF}
+%\definecolor{AlertColor}{HTML}{DA4D45}
+
+
+%% Set colors
+\setbeamercolor{title}{fg=TitleColor}
+\setbeamercolor{frametitle}{fg=TitleColor}
+\setbeamercolor{normal text}{fg=BodyColor}
+
+\setbeamercolor{block title}{fg=TitleColor}
+\setbeamercolor{block body}{fg=BodyColor}
+\setbeamercolor{block title alerted}{fg=AlertColor}
+\setbeamercolor{block title example}{fg=TitleColor}
+
+\setbeamercolor{alerted text}{fg=AlertColor}
+\setbeamercolor{itemize item}{fg=BodyColor}
+\setbeamercolor{enumerate item}{fg=BodyColor}
+\setbeamercolor{description item}{fg=BodyColor}
+
+\setbeamercolor{section in toc}{fg=BodyColor}
+
+\setbeamercolor{caption name}{fg=BodyColor}
+
+
+\mode
+<all>

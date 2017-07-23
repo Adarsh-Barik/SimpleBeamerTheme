@@ -1,0 +1,33 @@
+% We'll keep it simple 
+\mode<presentation>
+
+% Requirement
+% for making shadow boxes
+\RequirePackage{tikz}
+% for defining hex colors
+\RequirePackage{xcolor}
+% for urls
+\RequirePackage{url}
+% for images
+\RequirePackage{graphicx}
+\RequirePackage{pgfplots}
+% for fonts
+\RequirePackage[quiet]{fontspec}
+
+% light and dark style, light is default
+\DeclareOptionBeamer{style}{
+    \PassOptionsToPackage{style=#1}{beamercolorthemesimple}
+    \PassOptionsToPackage{style=#1}{beamerinnerthemesimple}
+    \PassOptionsToPackage{style=#1}{beamerouterthemesimple}
+}
+\ExecuteOptionsBeamer{style=light}
+\ProcessOptionsBeamer
+
+% Settings
+% load other parts of theme
+\useinnertheme{simple}	
+\useoutertheme{simple}
+\usecolortheme{simple}
+
+
+\mode<all>

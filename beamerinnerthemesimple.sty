@@ -1,0 +1,86 @@
+\mode<presentation>
+
+%% set the background
+
+% define color 
+\DeclareOptionBeamer{style}{\def\beamer@simple@style{#1}}
+\ExecuteOptionsBeamer{style=light} % light will be default if nothing is given
+\ProcessOptionsBeamer
+
+\def\beamer@simple@stylelight{light}%
+\def\beamer@simple@styledark{dark}%
+
+\ifx\beamer@simple@style\beamer@simple@stylelight%
+    \definecolor{TopColor}{HTML}{DDEFBB}
+	\definecolor{MidColor}{HTML}{434343}
+	%\definecolor{BottomColor}{HTML}{4369AB}
+	\definecolor{BottomColor}{HTML}{FFEEEE}
+	\definecolor{BodyColor}{HTML}{24454C}
+\else% 
+	\definecolor{TopColor}{HTML}{000000}
+	\definecolor{MidColor}{HTML}{434343}
+	%\definecolor{BottomColor}{HTML}{4369AB}
+	\definecolor{BottomColor}{HTML}{283F66}
+	\definecolor{BodyColor}{HTML}{FFFFFF}
+\fi%
+
+
+%\definecolor{TopColor}{HTML}{000000}
+%\definecolor{MidColor}{HTML}{434343}
+%\definecolor{BottomColor}{HTML}{4369AB}
+%\definecolor{BottomColor}{HTML}{283F66}
+
+
+
+% set canvas
+\setbeamertemplate{background canvas}{%
+\begin{tikzpicture}[remember picture,overlay]
+\shade[top color=TopColor,bottom color=BottomColor]
+  (current page.north west)
+     rectangle
+  (current page.south east);
+\end{tikzpicture}%     
+}
+
+%% some general settings
+\frenchspacing
+\unitlength=0.01\textwidth
+\thicklines
+\urlstyle{sf}
+\graphicspath{{images/}}
+
+%% Set fonts
+\defaultfontfeatures{
+    Mapping=tex-text,
+    Scale=MatchLowercase,
+}
+\setsansfont{Futura Book}
+\setmonofont{Monaco}
+% make math equations look beautiful
+\usefonttheme[onlymath]{serif}
+\newfontfamily\futurabold{Futura-Bold}
+
+%\setbeamerfont{title}{family=\futurabold}
+%\setbeamerfont{frametitle}{family=\futurabold}
+
+%% Set templates for various elements
+
+\setbeamertemplate{frametitle}
+  {\begin{centering}\smallskip
+   \insertframetitle\par
+   \smallskip\end{centering}}
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{itemize subitem}{$\bullet$}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[text line]{%
+    \hfill\strut{%
+        \scriptsize\sf\color{BodyColor!60}%
+        \quad\insertframenumber%
+    }%
+    \hfill%
+}
+
+\mode
+<all>
