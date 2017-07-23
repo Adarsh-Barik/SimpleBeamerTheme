@@ -11,6 +11,7 @@ There are two styles available:
 2. dark
 
 You can check `sample_light.pdf` and `sample_dark.pdf` in this repository.  
+![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/screenshot2.png)
 
 ## Font
 I use `Futura` (sans) and `Monaco` (mono) but if you don't have those (or don't like) then feel free to change them in `beamerinnerthemesimple.sty` file. 
