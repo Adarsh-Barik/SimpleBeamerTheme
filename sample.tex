@@ -10,7 +10,12 @@
 
 % Color palette 
 \definecolor{AlertColor}{HTML}{DA4D45}
-
+\definecolor{MyTeal}{HTML}{00796B}
+\definecolor{MyBlue}{HTML}{03A9F4}
+\definecolor{MyPink}{HTML}{E91E63}
+\definecolor{MyPurple}{HTML}{6A1B9A}
+\definecolor{MyLime}{HTML}{C6FF00}
+\definecolor{MyGreen}{HTML}{388E3C}
 
 % two styles light and dark
 % light is default
@@ -31,87 +36,126 @@
 %% Just for reference - it doesn't create a new slide
 \section{Why a new theme?}
 
-\begin{frame}[fragile]{Only Content Matters}
+\begin{frame}[fragile]{Why are we building a new theme?}
 	% examples taken from Indyk's slides
+	\centering 
+	\alert{``We want to have a minimal presentation where only content matters.''}
+	\vspace{\baselineskip}
 	\begin{columns}
 		\column{0.33\textwidth}
 		{
-			\begin{figure}
-				\includegraphics[scale=0.08]{img/short}
-			\end{figure}
-		\begin{center}
-		Short and concise sentences.
-		\end{center}
-
+			\circleimage[width=1cm]{MyGreen}{2cm}{img/smallnotebook}
+			\begin{center}
+				{\Large Short}\\
+				Write concise sentences.
+			\end{center}
+			
 		}
 		
 		\column{0.33\textwidth}
-	{
-		\begin{figure}
-			\includegraphics[scale=0.07]{img/simple}
-		\end{figure}
-	\begin{center}
-		Simple ideas.
-	\end{center}
-
-	}
-	
+		{
+			\circleimage[width=1cm]{MyLime}{2cm}{img/simplemaze}
+			\begin{center}
+				{\Large Simple}\\
+				Do not complicate things. %\vspace*{\baselineskip}
+			\end{center}
+			
+		}
+		
 		\column{0.33\textwidth}
-	{
-		\begin{figure}
-			\includegraphics[scale=0.07]{img/smart}
-		\end{figure}
-	\begin{center}
-		Smart presentation.
-	\end{center}
-
-	}
+		{
+			\circleimage[width=1cm]{MyBlue}{2cm}{img/smartidea}
+			\begin{center}
+				{\Large Smart}\\
+				Present ideas in a smart way. %\vspace*{\baselineskip}
+			\end{center}
+			
+		}
+		
+	\end{columns}	
 	
-	\end{columns}
-	
-
 \end{frame}
 
 \section{New options}
 
-\begin{frame}[fragile]{Image with Shadow}
+\begin{frame}[fragile]{How is this different than others?}
+\centering
+	\alert{Content + Cool Tools = Awesome Presentation}\vspace*{\baselineskip}
 	
+		Did you see those cute circles with images?
 
-\begin{verbatim}
-\shadowimage[scale=0.5]{img/visual}
-\end{verbatim}
+\verb|\circleimage[width=2cm]{MyPink}{3cm}{img/awesome}| \vspace*{\baselineskip}
 
-		\begin{figure}
-			\shadowimage[scale=0.45]{img/visual}
-			\caption{We can include images with hint of shadows}
-		\end{figure}
+
+		\circleimage[width=2cm]{MyPink}{3cm}{img/awesome}
+		
+		You can get cool clip-arts from \url{https://openclipart.org}.
+
 	
 \end{frame}
 
-\begin{frame}[fragile]{Other things...}
-	\begin{block}{How to use?}
-Include theme in your preamble --
+
+\begin{frame}[fragile]{Is there more?}
+	
+\begin{columns}
+	\column{0.5\textwidth}
+	\centering
+	We can include images with hint of shadows (looks better in light theme).
+\verb|\shadowimage[scale=0.5]{img/visual}|
+and of course \verb|\includegraphics| works too. 
+
+	\column{0.5\textwidth}
+	\centering
+	\begin{figure}
+		\shadowimage[scale=0.45]{img/visual}
+	\end{figure}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{Tell me more...}
+\centering 
+\begin{columns}
+	\column{0.5\textwidth}
+	I give you a minimal theme with no clutter. If you use it wisely then only sky is the limit. 
+	Unleash your {\Huge \alert{CREATIVITY}}
+	\column{0.5\textwidth}
+	\begin{figure}
+		\includegraphics[width=4cm]{img/think}
+	\end{figure}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{How do I use it?}
+	Include this in your preamble.
 \begin{verbatim}
 %\usetheme[style=dark]{simple}
 \usetheme[style=light]{simple} 
 % or  \usetheme{simple}
 \end{verbatim}
-	\end{block}
 
-Equations -- 
-	\begin{equation}
-	A^x + B^y = ?
-	\end{equation}
-	
-	Two styles --
-	\begin{itemize}
+It comes in	two styles --
+\begin{itemize}
 	\item Dark Style
 	\item \alert{Light Style (Default)}
-	\end{itemize}
+\end{itemize}
+
+And works like any other theme...
+
+\begin{block}{Block}
+works like a block.
+\end{block}
+
+Equations render just fine -- 
+\begin{equation}
+A^x + B^y = ?
+\end{equation}
+and so on so forth.
 \end{frame}
 
-\begin{frame}[fragile]{Issues}
-You may have issues with font. Go to file \verb|beamerinnerthemesimple.sty| and change font to the one that you like.
+\begin{frame}[fragile]{Can I make changes?}
+Yes. You can change whatever you want. Mostly, you'd want to change the font. Go to file \verb|beamerinnerthemesimple.sty| and change fonts to the ones you like.
 \begin{verbatim}
 \setsansfont{Futura Book}
 \setmonofont{Monaco}
@@ -122,25 +166,19 @@ You may comment
 \end{verbatim}
 \end{frame}
 
-\begin{frame}
-	\tikz[remember picture] \node[coordinate] (n) {};
-	\centering {\huge Unleash Your Creativity.... }
-	\tikz[remember picture] \node[coordinate] (n1) {};
-	\begin{tikzpicture}[remember picture, overlay]
-	%\draw[] (-11,3) grid (3,-5);
-    \node[] at (-10, 2)   (a) {What?};
-    \node[] at (-9, -4)   (b) {Why?};
-    \node[] at (-4, -3)   (c) {When?};
-    \node[] at (-4, 2.5)   (d) {How?};
-    \node[] at (2, 2)   (e) {Where?};
-    \node[] at (2, -4)   (f) {Who?};
-    \path[draw=AlertColor,thick,->] (a.south) to [out=-90, in=90,distance=1in] ([xshift=3cm, yshift=0.5cm]n.north);
-    \path[draw=AlertColor,thick,->] (b.north) to [out=90, in=-90,distance=1in] ([xshift=3cm]n.south);
-    \path[draw=AlertColor,thick,->] (c.north) to [out=90, in=-90,distance=1in] ([xshift=3.3cm]n.south);
-     \path[draw=AlertColor,thick,->] (d.south) to [out=-90, in=90,distance=1in] ([xshift=3.5cm, yshift=0.5cm]n.north);
-     \path[draw=AlertColor,thick,->] (e.south) to [out=-90, in=90,distance=1in] ([xshift=4cm, yshift=0.5cm]n.north);
-      \path[draw=AlertColor,thick,->] (f.north) to [out=90, in=-90,distance=1in] ([xshift=4cm]n.south);
-	\end{tikzpicture}
+\begin{frame}[fragile]{So what is next?}
+\centering 
+\alert{I'd love to hear your thoughts, issues, questions and comments.}
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{figure}
+		\includegraphics[width=3cm]{img/questionguy}
+	\end{figure}
+	\column{0.5\textwidth}
+		\begin{figure}
+		\includegraphics[width=3cm]{img/questiongirl}
+	\end{figure}
+\end{columns}
 \end{frame}
 
 

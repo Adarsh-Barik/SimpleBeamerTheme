@@ -64,4 +64,19 @@
 	\end{tikzpicture}}
 
 
+% we'll also provide a command to put cliparts inside a circle
+% 1- color, 2 - circle size, 3 - image size, 4 - image
+\providecommand\circleimage[4][]{%
+	\begin{figure}
+	\begin{tikzpicture}
+		\node[circle,draw=#2,
+			fill=#2,
+			path picture={
+				\node at (path picture bounding box.center){
+					\includegraphics[#1]{#4}
+				};
+			}, inner sep=0pt, minimum size=#3]{};
+	\end{tikzpicture}
+	\end{figure}}
+
 \mode<all>
