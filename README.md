@@ -4,7 +4,7 @@ I like to keep things simple. So I decided to make a beamer theme which focuses 
 2. Font
 3. Content
 
-First two are covered by style files and content depends on you. I tried to keep it as simple as possible. Go through the `sample.pdf` to get a better idea of what I am saying.  
+First two are covered by style files and content depends on you. I tried to keep it as simple as possible. With a simple theme and cool tools we can make awesome presentations. Go through the `sample.pdf` to get a better idea of what I am saying.  
 ## Styles
 There are two styles available:
 1. light (default)
