@@ -2,6 +2,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+% for long verbatim lines
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines=true}
+
 %% Title and authors
 \title{A Non-intrusive Beamer Theme Focusing on Content}
 \subtitle{simple theme}
@@ -112,6 +116,99 @@ and of course \verb|\includegraphics| works too.
 \end{columns}
 
 \end{frame}
+
+\begin{frame}[fragile]{What else?}
+	
+	\centering
+	We can use cards to present our ideas. 
+	\verb|\card{MyGreen}{MyBlue}{6cm}{img/strong}{<text>}|
+	\vspace{\baselineskip}
+	
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+
+	\card{MyGreen}{MyBlue}{6cm}{img/strong}{
+		{\Large Strength} \\
+		We can explain strengths here. There may be many points which we can write here.
+	}
+
+	\vspace*{0.5\baselineskip}
+
+	\card{MyBlue}{AlertColor}{6cm}{img/weak}{
+		{\Large Weakness} \\
+		We can explain weakness-es here.
+	}
+	
+		\column{0.5\textwidth}
+		\centering
+
+
+		\card{MyPurple}{MyLime}{6cm}{img/opportunity}{
+		{\Large Opportunities} \\
+		We can explain opportunities here.
+		\vspace*{2\baselineskip}
+	}
+	
+	\vspace*{0.5\baselineskip}
+	
+		\card{AlertColor}{MyGreen}{6cm}{img/threat}{
+		{\Large Threats} \\
+		We can explain threats here.
+	}
+	
+	\end{columns}
+	
+\end{frame}
+
+
+\begin{frame}[fragile]{Different cards for different purposes}
+	
+	
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+		
+			\card{MyBlue}{AlertColor}{6cm}{img/weak}{
+			{\Large Card} \\
+			A usual card with an image at corner.
+		}
+		\begin{lstlisting}[breaklines]
+\card{MyBlue}{AlertColor}{6cm}{img/weak}{<text>}
+\end{lstlisting}
+	%	\vspace*{0.5\baselineskip}
+		
+			
+	\simplecard{MyGreen}{6cm}{
+		{\Large Simple Card} \\ 
+		This is a simple card.
+	}
+	\verb|\simplecard{MyGreen}{6cm}{<text>}|
+		
+		\column{0.5\textwidth}
+		\centering
+		
+		\sideimagecard{MyPurple}{6cm}{img/nature}{
+			{\Large Side Image Card} \\
+			This is a side image card.
+		}
+	
+	\begin{lstlisting}[breaklines]
+\sideimagecard{MyPurple}{6cm}{img/nature}{<text>}
+\end{lstlisting}
+
+		
+		\imagecard{img/visual1}{6cm}{
+			{\Large Image Card} \\
+		This card has an image as background.
+		}
+		\verb|\imagecard{img/visual1}{6cm}{<text>}|
+		
+	\end{columns}
+	
+\end{frame}
+
+
 
 \begin{frame}[fragile]{Tell me more...}
 \centering 
