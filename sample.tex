@@ -18,9 +18,13 @@
 \definecolor{MyBlue}{HTML}{03A9F4}
 \definecolor{MyPink}{HTML}{E91E63}
 \definecolor{MyPurple}{HTML}{6A1B9A}
-\definecolor{MyLime}{HTML}{C6FF00}
+\definecolor{MyLime}{HTML}{CCDB39}
 \definecolor{MyGreen}{HTML}{388E3C}
-
+\definecolor{SelectColor}{HTML}{F5F5F5}
+\definecolor{MyIndigo}{HTML}{3E50B4}
+\definecolor{MyOrange}{HTML}{FE9700}
+\definecolor{MyPeach}{HTML}{FECBBB}
+\definecolor{DarkBlue}{HTML}{0287D0}
 % two styles light and dark
 % light is default
 \usetheme[style=dark]{simple}
@@ -144,7 +148,7 @@ and of course \verb|\includegraphics| works too.
 		\centering
 
 
-		\card{MyPurple}{MyLime}{6cm}{img/opportunity}{
+		\card{MyOrange}{MyLime}{6cm}{img/opportunity}{
 		{\Large Opportunities} \\
 		We can explain opportunities here.
 		\vspace*{2\baselineskip}
@@ -188,13 +192,13 @@ and of course \verb|\includegraphics| works too.
 		\column{0.5\textwidth}
 		\centering
 		
-		\sideimagecard{MyPurple}{6cm}{img/nature}{
+		\sideimagecard{MyOrange}{6cm}{img/nature}{
 			{\Large Side Image Card} \\
 			This is a side image card.
 		}
 	
 	\begin{lstlisting}[breaklines]
-\sideimagecard{MyPurple}{6cm}{img/nature}{<text>}
+\sideimagecard{MyOrange}{6cm}{img/nature}{<text>}
 \end{lstlisting}
 
 		
@@ -207,6 +211,122 @@ and of course \verb|\includegraphics| works too.
 	\end{columns}
 	
 \end{frame}
+
+\begin{frame}[fragile]{Cards can be used in many ways..}
+	
+	\centering
+	Here we use them to represent task flow of software development.
+	\vspace{\baselineskip}
+	
+	\begin{columns}
+		\column{0.25\textwidth}
+		\centering
+		
+		\card{MyGreen}{DarkBlue}{3.5cm}{img/one}{
+			{\Large PREPARE} \\
+			We can explain strengths here. There may be many points which we can write here. We can explain strengths here. There may be many points which we can write here.
+		}
+		
+		\column{0.25\textwidth}
+		\centering
+		
+		\card{MyGreen}{DarkBlue}{3.5cm}{img/two}{
+			{\Large DEVELOP} \\
+			We can explain weaknesses here. There may be many points which we can write here. We can explain strengths here. There may be many points which we can write here.
+		}
+		
+		\column{0.25\textwidth}
+		\centering
+		
+		
+		\card{MyGreen}{DarkBlue}{3.5cm}{img/three}{
+			{\Large DEPLOY} \\
+			We can explain opportunities here. There may be many points which we can write here. We can explain strengths here. There may be many points which we can write here.
+		}
+		
+		\column{0.25\textwidth}
+		\centering
+		
+		\card{MyGreen}{DarkBlue}{3.5cm}{img/four}{
+			{\Large SUPPORT} \\
+			We can explain threats here. There may be many points which we can write here. We can explain strengths here. There may be many points which we can write here.
+		}
+		
+	\end{columns}
+	
+\end{frame}
+
+
+\begin{frame}[fragile]{Fancy tables...}
+\begin{center}
+\begin{fancytable}{Table Title}{2cm}
+{
+	No. & Monday   & Tuesday & Wednesday & Thursday & Friday\\
+	1   & A & B & C & D & E \\
+	2   & F & G & H & J & K \\
+	3   & A & B & C & D & E \\
+}
+\end{fancytable}
+\end{center}
+\begin{lstlisting}
+\begin{fancytable}{Table Title}{2cm}
+{No. & Monday   & Tuesday & Wednesday & Thursday & Friday\\
+1   & A & B & C & D & E \\
+2   & F & G & H & J & K \\
+3   & A & B & C & D & E \\}
+\end{fancytable}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Fancy Tables...}
+	\centering
+	Some times some rows need more depth.
+	\begin{center}
+		\begin{fancytable}{Algorithm Analysis}{3cm}{
+				Algorithm & Run time & Remark \\
+				|[text depth=3ex]|This is a big Old algorithm & 	|[text depth=3ex]| $O(n^3)$ & 	|[text depth=3ex]|  pretty slow \\
+				New algorithm & $O(n)$ & still slow \\
+			}
+		\end{fancytable}
+	\end{center}
+\begin{lstlisting}
+\begin{fancytable}{Algorithm Analysis}{3cm}{
+Algorithm & Run time & Remark \\
+|[text depth=3ex]|This is a big Old algorithm & |[text depth=3ex]| $O(n^3)$ & |[text depth=3ex]|  pretty slow \\
+New algorithm & $O(n)$ & still slow \\}
+\end{fancytable}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Fancy Tables...}
+	\centering
+	We can select a row to highlight.
+	\begin{center}
+	\begin{fancytable}{Algorithm Analysis}{3cm}{
+		Algorithm & Run time & Remark \\
+		|[fill=SelectColor]| Our algorithm & 	|[fill=SelectColor]| $O(\log n)$ & 	|[fill=SelectColor]| fast \\
+		|[text depth=3ex]|This is a big Old algorithm & 	|[text depth=3ex]| $O(n^3)$ & 	|[text depth=3ex]|  pretty slow \\
+		New algorithm & $O(n)$ & still slow \\
+	}
+	\end{fancytable}
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Fancy Tables...}
+	\centering
+	Even Fancier!!
+	\begin{center}
+		\begin{fancytable}{Algorithm Analysis}{3cm}{
+		|[]|	\checkbox{} &	Algorithm & Run time & Remark \\
+		|[fill=SelectColor]|\checkumark &	|[fill=SelectColor]| Our algorithm & 	|[fill=SelectColor]| $O(\log n)$ & 	|[fill=SelectColor]| fast \\
+		|[text depth=3ex]|\checkbox{} & |[text depth=3ex]|This is a big Old algorithm & 	|[text depth=3ex]| $O(n^3)$ & 	|[text depth=3ex]|  pretty slow \\
+		|[]|	\checkbox{}	& New algorithm & $O(n)$ & still slow \\
+			}
+		\end{fancytable}
+	\end{center}
+\end{frame}
+
 
 
 

@@ -13,6 +13,18 @@ There are two styles available:
 You can check `sample_light.pdf` and `sample_dark.pdf` in this repository.  
 ![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/screenshot2.png)
 
+## Tools
+1. circleimage
+![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/circleimage.png)
+
+2. shadowimage
+![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/shadowimage.png)
+
+3. cards
+![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/cards.png)
+
+4. fancytable
+![alt tag](https://raw.githubusercontent.com/Adarsh-Barik/SimpleBeamerTheme/master/img/fancytables.png)
 ## Font
 I use `Futura` (sans) and `Monaco` (mono) but if you don't have those (or don't like) then feel free to change them in `beamerinnerthemesimple.sty` file. 
 

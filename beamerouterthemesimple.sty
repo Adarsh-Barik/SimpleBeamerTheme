@@ -2,7 +2,7 @@
 
 % Shadow boxes for images
 % code adapted from https://tex.stackexchange.com/a/11483/3954
-\usetikzlibrary{shadows,calc}
+\usetikzlibrary{shadows,calc, matrix, shadows.blur, fit}
 
 % some parameters for customization
 \def\shadowshift{3pt,-3pt}
@@ -144,6 +144,71 @@
      }
 }
 
+
+
+% Environment for a fancy table
+
+\newenvironment{fancytable}[2]{%
+	\def\tabtitle{#1}
+	\def\mycellwidth{#2}
+	\tikzset{ 
+	bottomrule/.style={%
+			nodes in empty cells,
+		execute at end cell={%
+			\draw [very thin, white!80!black] (\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.south west) -- (\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.south east);%
+		}
+	},
+	toprule/.style={%
+			nodes in empty cells,
+	execute at end cell={%
+		\fill[white] (\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.north west) rectangle ([yshift=1cm]\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.north east);%;
+		\draw [very thin, white!80!black] ([yshift=1cm]\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.north west) -- ([yshift=1cm]\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.north east);%
+	}
+	},
+	table/.style={
+		matrix of nodes,
+		row sep=0pt,
+		column sep=-2pt,
+		nodes={
+			fill=white, align=center, text=black
+		},
+		minimum height=1.5em,
+		text depth=0.5ex,
+		text height=2ex,
+		nodes in empty cells,
+		%%
+		every even row/.style={
+			bottomrule
+		},
+		every odd row/.style={
+			bottomrule
+		},
+		row 1/.style={
+			nodes={
+				text=white!40!black,
+				font = \bfseries
+			},
+		toprule
+		}
+	}
+}
+\begin{tikzpicture}
+	\matrix (first) [table,text width=\mycellwidth]}%
+{;
+\node[above right, text=black] at ([xshift=0.5cm, yshift=0.2cm]first-1-1.north west) { {\Large \tabtitle}};
+%\node[]{\mystyle};
+\end{tikzpicture}
+}
+
+
+%% provide check mark and empty box
+\definecolor{BoxColor}{HTML}{5A7FF3}
+\providecommand\checkbox{
+		{\color{white!40!black}$\square$}
+}
+\providecommand\checkumark{
+		{\color{BoxColor}$\blacksquare$}
+}
 
 
 \mode<all>
