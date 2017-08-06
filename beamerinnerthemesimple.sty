@@ -9,6 +9,7 @@
 
 \def\beamer@simple@stylelight{light}%
 \def\beamer@simple@styledark{dark}%
+\def\beamer@simple@stylenone{none}%
 
 \ifx\beamer@simple@style\beamer@simple@stylelight%
     \definecolor{TopColor}{HTML}{DDEFBB}
@@ -17,11 +18,19 @@
 	\definecolor{BottomColor}{HTML}{FFEEEE}
 	\definecolor{BodyColor}{HTML}{24454C}
 \else% 
-	\definecolor{TopColor}{HTML}{000000}
-	\definecolor{MidColor}{HTML}{434343}
-	%\definecolor{BottomColor}{HTML}{4369AB}
-	\definecolor{BottomColor}{HTML}{283F66}
-	\definecolor{BodyColor}{HTML}{FFFFFF}
+  \ifx\beamer@simple@style\beamer@simple@styledark
+  	\definecolor{TopColor}{HTML}{000000}
+  	\definecolor{MidColor}{HTML}{434343}
+  	%\definecolor{BottomColor}{HTML}{4369AB}
+  	\definecolor{BottomColor}{HTML}{283F66}
+  	\definecolor{BodyColor}{HTML}{FFFFFF}
+  \else%
+    \definecolor{TopColor}{HTML}{FFFFFF}
+    \definecolor{MidColor}{HTML}{FFFFFF}
+    %\definecolor{BottomColor}{HTML}{4369AB}
+    \definecolor{BottomColor}{HTML}{FFFFFF}
+    \definecolor{BodyColor}{HTML}{24454C}
+  \fi%
 \fi%
 
 
@@ -59,6 +68,8 @@
 % make math equations look beautiful
 \usefonttheme[onlymath]{serif}
 \newfontfamily\futurabold{Futura-Bold}
+\newfontfamily\futuraitalic{Futura Std Book Oblique}
+
 
 %\setbeamerfont{title}{family=\futurabold}
 %\setbeamerfont{frametitle}{family=\futurabold}

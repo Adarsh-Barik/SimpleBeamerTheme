@@ -8,16 +8,24 @@
 
 \def\beamer@simple@stylelight{light}%
 \def\beamer@simple@styledark{dark}%
+\def\beamer@simple@stylenone{none}%
+
 
 \ifx\beamer@simple@style\beamer@simple@stylelight%
     \definecolor{TitleColor}{HTML}{1093A7}
 	\definecolor{BodyColor}{HTML}{24454C}
 	\definecolor{AlertColor}{HTML}{DA4D45}
-\else% 
-	%\definecolor{TitleColor}{HTML}{DCDCDC}
-	\definecolor{TitleColor}{HTML}{FFF0F5}
-	\definecolor{BodyColor}{HTML}{FFFFFF}
-	\definecolor{AlertColor}{HTML}{DA4D45}
+\else%
+	\ifx\beamer@simple@style\beamer@simple@styledark%
+		%\definecolor{TitleColor}{HTML}{DCDCDC}
+		\definecolor{TitleColor}{HTML}{FFF0F5}
+		\definecolor{BodyColor}{HTML}{FFFFFF}
+		\definecolor{AlertColor}{HTML}{DA4D45}
+	\else%
+		\definecolor{TitleColor}{HTML}{1093A7}
+		\definecolor{BodyColor}{HTML}{24454C}
+		\definecolor{AlertColor}{HTML}{DA4D45}
+	\fi%
 \fi%
 
 

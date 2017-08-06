@@ -7,7 +7,7 @@
 \lstset{basicstyle=\ttfamily,breaklines=true}
 
 %% Title and authors
-\title{A Non-intrusive Beamer Theme Focusing on Content}
+\title{\futurabold A Non-intrusive Beamer Theme Focusing on Content}
 \subtitle{simple theme}
 \date{\today}
 \author{\underline{Adarsh}}
@@ -25,14 +25,16 @@
 \definecolor{MyOrange}{HTML}{FE9700}
 \definecolor{MyPeach}{HTML}{FECBBB}
 \definecolor{DarkBlue}{HTML}{0287D0}
-% two styles light and dark
+\definecolor{DarkGold}{HTML}{C69318}
+% three styles light, dark and none
 % light is default
-\usetheme[style=dark]{simple}
+\usetheme[style=none]{simple}
 
 \begin{document}
 
 \begin{frame}
-\maketitle
+	% \maketitle also works
+\makepictitle{img/coverimage}{img/logo}{DarkGold}
 \end{frame}
 
 %% Toc in first frame - takes sections and not frames
@@ -43,6 +45,10 @@
 
 %% Just for reference - it doesn't create a new slide
 \section{Why a new theme?}
+\begin{frame}
+	\vspace{2\baselineskip}
+	\ribbon{AlertColor}{\futurabold \Huge A New Theme}
+\end{frame}
 
 \begin{frame}[fragile]{Why are we building a new theme?}
 	% examples taken from Indyk's slides
@@ -84,9 +90,24 @@
 	
 \end{frame}
 
-\section{New options}
+\begin{frame}[fragile]{What does the theme provide?}
+	%\centering 
+	Theme in itself is quite minimal-
+	\begin{itemize}
+		\item Simple background
+		\item Simple titles with no blocks or navigation symbols
+		\item \alert{Some Cool Tools}
+	\end{itemize}
+	
+\end{frame}
 
-\begin{frame}[fragile]{How is this different than others?}
+\section{New options}
+\begin{frame}
+	\vspace{2\baselineskip}
+	\ribbon{MyGreen}{\futurabold \Huge Tools}
+\end{frame}
+
+\begin{frame}[fragile]{Tools, you say?}
 \centering
 	\alert{Content + Cool Tools = Awesome Presentation}\vspace*{\baselineskip}
 	
@@ -102,8 +123,19 @@
 	
 \end{frame}
 
+\begin{frame}[fragile]{You have already seen some..}
+	\centering 
+	\begin{itemize}
+		\item title page: \verb|\makepictitle{img/coverimage}{img/logo}{DarkGold}|
+		\item section heading: \verb|\ribbon{MyGreen}{\futurabold \Huge Tools}|
+	\end{itemize}
+	I tried to keep them flexible. For example, I can create a thin ribbon here by just typing \verb|\ribbon[minimum height=0]{MyBlue}{I am a ribbon.}|.
+	\ribbon[minimum height=0]{MyBlue}{I am a ribbon.}
 
-\begin{frame}[fragile]{Is there more?}
+\end{frame}
+
+
+\begin{frame}[fragile]{Images with shadows}
 	
 \begin{columns}
 	\column{0.5\textwidth}
@@ -121,7 +153,7 @@ and of course \verb|\includegraphics| works too.
 
 \end{frame}
 
-\begin{frame}[fragile]{What else?}
+\begin{frame}[fragile]{Cards}
 	
 	\centering
 	We can use cards to present our ideas. 
@@ -166,7 +198,7 @@ and of course \verb|\includegraphics| works too.
 \end{frame}
 
 
-\begin{frame}[fragile]{Different cards for different purposes}
+\begin{frame}[fragile]{So many cards}
 	
 	
 	\begin{columns}
@@ -212,7 +244,7 @@ and of course \verb|\includegraphics| works too.
 	
 \end{frame}
 
-\begin{frame}[fragile]{Cards can be used in many ways..}
+\begin{frame}[fragile]{Cards can be used in many ways}
 	
 	\centering
 	Here we use them to represent task flow of software development.
@@ -257,7 +289,7 @@ and of course \verb|\includegraphics| works too.
 \end{frame}
 
 
-\begin{frame}[fragile]{Fancy tables...}
+\begin{frame}[fragile]{Fancy tables}
 \begin{center}
 \begin{fancytable}{Table Title}{2cm}
 {
@@ -278,7 +310,7 @@ and of course \verb|\includegraphics| works too.
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]{Fancy Tables...}
+\begin{frame}[fragile]{Fancy Tables with multi-line cells}
 	\centering
 	Some times some rows need more depth.
 	\begin{center}
@@ -299,7 +331,7 @@ New algorithm & $O(n)$ & still slow \\}
 \end{frame}
 
 
-\begin{frame}[fragile]{Fancy Tables...}
+\begin{frame}[fragile]{Fancy Tables with selection}
 	\centering
 	We can select a row to highlight.
 	\begin{center}
@@ -313,9 +345,9 @@ New algorithm & $O(n)$ & still slow \\}
 	\end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Fancy Tables...}
+\begin{frame}[fragile]{Fancy Tables are..}
 	\centering
-	Even Fancier!!
+	\alert{Even Fancier!!}
 	\begin{center}
 		\begin{fancytable}{Algorithm Analysis}{3cm}{
 		|[]|	\checkbox{} &	Algorithm & Run time & Remark \\
@@ -327,15 +359,18 @@ New algorithm & $O(n)$ & still slow \\}
 	\end{center}
 \end{frame}
 
+\begin{frame}
+\vspace{2\baselineskip}
+\ribbon{MyOrange}{\futurabold \Huge How Does It Work?}
+\end{frame}
 
 
-
-\begin{frame}[fragile]{Tell me more...}
+\begin{frame}
 \centering 
 \begin{columns}
 	\column{0.5\textwidth}
 	I give you a minimal theme with no clutter. If you use it wisely then only sky is the limit. 
-	Unleash your {\Huge \alert{CREATIVITY}}
+	Unleash your {\Huge \alert{CREATIVITY}}.
 	\column{0.5\textwidth}
 	\begin{figure}
 		\includegraphics[width=4cm]{img/think}
@@ -347,15 +382,14 @@ New algorithm & $O(n)$ & still slow \\}
 \begin{frame}[fragile]{How do I use it?}
 	Include this in your preamble.
 \begin{verbatim}
-%\usetheme[style=dark]{simple}
 \usetheme[style=light]{simple} 
-% or  \usetheme{simple}
 \end{verbatim}
 
 It comes in	two styles --
 \begin{itemize}
-	\item Dark Style
-	\item \alert{Light Style (Default)}
+	\item Dark Style - \verb|\usetheme[style=dark]{simple} |
+	\item \alert{Light Style (Default)}  - \verb|\usetheme[style=light]{simple} |
+	\item No style - \verb|\usetheme[style=none]{simple} |
 \end{itemize}
 
 And works like any other theme...
@@ -377,13 +411,19 @@ Yes. You can change whatever you want. Mostly, you'd want to change the font. Go
 \setsansfont{Futura Book}
 \setmonofont{Monaco}
 \end{verbatim}
-You may comment 
+Define a bold and italic font:
 \begin{verbatim}
 \newfontfamily\futurabold{Futura-Bold}
+\newfontfamily\futuraitalic{Futura Std Book Oblique}
 \end{verbatim}
 \end{frame}
 
-\begin{frame}[fragile]{So what is next?}
+\begin{frame}
+	\vspace{2\baselineskip}
+	\ribbon{DarkGold}{\futurabold \Huge What Next?}
+\end{frame}
+
+\begin{frame}
 \centering 
 \alert{I'd love to hear your thoughts, issues, questions and comments.}
 \begin{columns}

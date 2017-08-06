@@ -14,13 +14,20 @@
 
 \def\beamer@simple@stylelight{light}%
 \def\beamer@simple@styledark{dark}%
+\def\beamer@simple@stylenone{none}%
+
 
 \ifx\beamer@simple@style\beamer@simple@stylelight%
    	\colorlet{innercolor}{black!60}
 	\colorlet{outercolor}{gray!05}
 \else% 
-	\colorlet{innercolor}{black}
-	\colorlet{outercolor}{black!80}
+	\ifx\beamer@simple@style\beamer@simple@styledark%
+		\colorlet{innercolor}{black}
+		\colorlet{outercolor}{black!80}
+	\else%
+		\colorlet{innercolor}{black!60}
+		\colorlet{outercolor}{gray!05}
+	\fi%
 \fi%
 
 
@@ -210,5 +217,38 @@
 		{\color{BoxColor}$\blacksquare$}
 }
 
+
+%% provide command for a title with picture
+% option: logo width, 2-cover image, 3-logo, 4- logo background
+\providecommand\makepictitle[4][width=2.3cm]{
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[draw=none, fit={(current page.north west)([yshift=-1cm]current page.east)}, blur shadow={shadow blur steps=3}, path picture={
+		\node at (path picture bounding box.south){
+			\includegraphics[width=\textwidth]{#2}
+		};}](pic){};
+	\node[circle,draw=white,
+	fill=white, inner sep=0pt, minimum size=2.65cm,  circular drop shadow={shadow xshift=0, shadow yshift=0, fill=black,shadow scale=1.05}] at ([xshift=- 0.35\textwidth]pic.south) {};
+	\node[circle,draw=white, thick,
+	fill=#4,
+	path picture={
+		\node at (path picture bounding box.center){
+			\includegraphics[#1]{#3}
+		};
+	}, inner sep=0pt, minimum size=2.6cm] at ([xshift=- 0.35\textwidth]pic.south) (logo){};
+	\node[above, text width=0.7\textwidth, align=center] (title) at ([xshift=- 0.42\textwidth]pic.south east) {\color{white}{\huge \inserttitle} \par \insertsubtitle};
+	\node[below=0.2cm, text width=0.7\textwidth, align=center] (author) at ([xshift=- 0.42\textwidth]pic.south east) { \insertauthor \par \insertinstitute  \par \insertdate};
+	\end{tikzpicture} 
+}
+
+
+%% provide command ribbon to use as sections
+% option: ribbon height, 2-color, 3- text
+\providecommand\ribbon[3][minimum height=2.5cm]{
+	\begin{center}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[draw=#2, rectangle, minimum width=\paperwidth, fill=#2,  #1] {#3};
+	\end{tikzpicture} 
+	\end{center}
+}
 
 \mode<all>
