@@ -1,4 +1,4 @@
-\documentclass[xetex, aspectratio=169]{beamer}
+\documentclass[xetex, aspectratio=169,professionalfont]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -357,6 +357,89 @@ New algorithm & $O(n)$ & still slow \\}
 			}
 		\end{fancytable}
 	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{We can make fancy lists}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+\begin{lstlisting}
+\begin{fancylist}
+\item Our awesome research results
+\item They can also be applied elsewhere
+\item Methods are new and efficient
+\item It does have some drawbacks. But every method does.Drawbacks are norm in this field and that is alright.
+\end{fancylist} 
+\end{lstlisting}
+	
+		\column{0.5\textwidth}
+		\centering
+			\begin{fancylist}
+			\item Our awesome research results
+			\item They can also be applied elsewhere
+			\item Methods are new and efficient
+			\item It does have some drawbacks. But every method does. Drawbacks are norm in this field and that is alright.
+		\end{fancylist} 
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Fancy lists with fancy options...}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+\begin{lstlisting}
+\begin{fancylist}[color=MyOrange] ...
+\end{lstlisting}
+\vspace{\baselineskip}
+		\begin{fancylist}[color=MyOrange]
+	\item Our awesome research results
+	\item They can also be applied elsewhere
+	\item Methods are new and efficient
+	\item It does have some drawbacks. But every method does. 
+	\end{fancylist} 
+		
+		\column{0.5\textwidth}
+		\centering
+\begin{lstlisting}
+\begin{fancylist}[color=AlertColor, shape=ring]...
+\end{lstlisting}
+
+		\begin{fancylist}[color=AlertColor, shape=ring]
+			\item Our awesome research results
+			\item They can also be applied elsewhere
+			\item Methods are new and efficient
+			\item It does have some drawbacks. But every method does. 
+		\end{fancylist} 
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Fancy lists with fancy options...}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\centering
+\begin{lstlisting}
+\begin{fancylist}[color=MyBlue, shape=square]...
+\end{lstlisting}
+
+		\begin{fancylist}[color=MyBlue, shape=square]
+			\item Our awesome research results
+			\item They can also be applied elsewhere
+			\item Methods are new and efficient
+			\item It does have some drawbacks. But every method does.
+		\end{fancylist} 
+		
+		\column{0.5\textwidth}
+		\centering
+\begin{lstlisting}
+\begin{fancylist}[shape=hollowsquare]...
+\end{lstlisting}
+		\begin{fancylist}[shape=hollowsquare]
+			\item Our awesome research results
+			\item They can also be applied elsewhere
+			\item Methods are new and efficient
+			\item It does have some drawbacks. But every method does.
+		\end{fancylist} 
+	\end{columns}
 \end{frame}
 
 \begin{frame}

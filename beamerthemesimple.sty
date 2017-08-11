@@ -19,6 +19,16 @@
 \RequirePackage{booktabs}
 \RequirePackage{colortbl}
 
+% For fancy enumerate tcolorbox
+\RequirePackage[most]{tcolorbox}
+
+% For options / pgfkeys
+\RequirePackage{pgfkeys}
+
+% for beautiful maths font http://www.logicmatters.net/resources/pdfs/MathFonts.pdf Palatino - Euler VM (2)
+%\RequirePackage{pxfonts}
+\RequirePackage{eulervm}
+
 % light, dark and none style, light is default
 \DeclareOptionBeamer{style}{
     \PassOptionsToPackage{style=#1}{beamercolorthemesimple}

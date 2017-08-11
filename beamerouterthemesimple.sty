@@ -251,4 +251,65 @@
 	\end{center}
 }
 
+
+%% fancylist environment
+% https://tex.stackexchange.com/questions/385663/custom-enumerate-list-align-enumerate-label-at-the-center-of-text
+
+% a default color
+\definecolor{MyBlue}{HTML}{03A9F4}
+\newcounter{fancycount}
+% lets define some options using pgfkeys 
+% https://tex.stackexchange.com/questions/34312/how-to-create-a-command-with-key-values
+\pgfkeys{
+ /fancylist/.is family, /fancylist,
+ default/.style = 
+  {shape = circle, color = MyBlue},
+  shape/.estore in = \myshape,
+  color/.estore in = \mycolor,
+}
+
+\newenvironment{fancylist}[1][color=MyBlue, shape=circle]{%
+	\pgfkeys{/fancylist, default, #1}%
+
+	% lets decide label shape based on option
+	\def\mysquare{square}
+	\def\myring{ring}
+	\def\myhollowsquare{hollowsquare}
+	\ifx\myshape\mysquare
+	\def\mydraw{
+	\node[draw=\mycolor,rectangle,minimum width=7.0mm, minimum height=7.0mm, inner sep=0pt,fill=\mycolor] at (X) {\refstepcounter{fancycount}\Large\arabic{fancycount}}
+	}
+	\else
+		\ifx\myshape\myhollowsquare
+		\def\mydraw{
+			\node[draw=\mycolor,rectangle,minimum width=7.0mm, minimum height=7.0mm, inner sep=0pt] at (X) {\refstepcounter{fancycount}\Large\arabic{fancycount}}
+			}
+		\else
+			\ifx\myshape\myring
+				\def\mydraw{
+				\node[draw=\mycolor,circle,minimum width=8.0mm,inner sep=0pt] at (X) {\refstepcounter{fancycount}\Large\arabic{fancycount}}
+				}
+			\else
+				\def\mydraw{
+				\node[draw=\mycolor,circle,minimum width=8.0mm,inner sep=0pt,fill=\mycolor] at (X) {\refstepcounter{fancycount}\Large\arabic{fancycount}}
+				}
+			\fi
+		\fi
+	\fi
+
+	\setcounter{fancycount}{0}
+	% lets keep it simple and ask users to use \item
+	\def\item{\tcbitem}
+	\begin{tcbitemize}[raster columns=1,    
+		nofloat,
+		enhanced,
+		raster left skip=10.0mm,
+		sharp corners=all,
+		opacityfill=0,
+		valign=center,
+		coltext=BodyColor,
+		overlay={\coordinate (X) at ([xshift=-7.50mm]frame.west);
+			\mydraw; \draw[very thick, color=\mycolor] (frame.north west) -- (frame.south west); }]}{\end{tcbitemize}}
+
+
 \mode<all>
