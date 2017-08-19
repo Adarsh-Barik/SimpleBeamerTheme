@@ -23,6 +23,7 @@ Check any of the sample pdf to learn more about tools. You could do many things 
 5. Make title with cover picture
 6. Create boxes across the page
 7. Create fancy lists
+8. Colorful side headings
 
 ## Font
 I use `Futura` (sans) and `Monaco` (mono) but if you don't have those (or don't like) then feel free to change them in `beamerinnerthemesimple.sty` file. 

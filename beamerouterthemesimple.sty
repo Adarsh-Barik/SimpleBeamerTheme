@@ -312,4 +312,29 @@
 			\mydraw; \draw[very thick, color=\mycolor] (frame.north west) -- (frame.south west); }]}{\end{tcbitemize}}
 
 
+
+%% provide command to create box with colorful side-headings
+% option - color , 2 - title, 3 - text
+\providecommand\fancybox[3][MyBlue]{%
+\tcbset{
+	mybox/.style={
+		enhanced,
+		grow to left by=-2.5cm,
+		boxsep=0mm,
+		sharp corners=all,
+		opacityfill=0,
+		coltext=BodyColor,
+		overlay={
+			\coordinate (X) at ([xshift=-1mm, yshift=-1.5mm]frame.north west);
+			\node[align=right, text=#1, text width=2.5cm, anchor=north east] at (X) {#2};
+			\draw[line width=0.5mm, color=#1] (frame.north west) -- (frame.south west); 
+			}
+		}
+	}
+
+\begin{tcolorbox}[mybox]
+	#3
+\end{tcolorbox}
+}
+
 \mode<all>
