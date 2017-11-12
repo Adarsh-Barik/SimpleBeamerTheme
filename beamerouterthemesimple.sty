@@ -337,4 +337,20 @@
 \end{tcolorbox}
 }
 
+
+%% provide command to show main results
+% option - color , 2 - title, 3 - text
+\providecommand\mainresult[3][yellow]{%
+\begin{center}
+	\begin{tikzpicture}[remember picture, overlay]
+	\node[draw=#1, rectangle, minimum width=\paperwidth, fill=#1, minimum height=\paperheight, at=(current page.center)] (back) {  };
+	\node[ draw=white, rectangle, minimum width=0.9\paperwidth,fill=white, minimum height=0.8\paperheight, at=(current page.center), drop shadow={shadow blur steps=0.5}] (card) { };
+	\node[ draw=black, rectangle, minimum width=0.07\paperwidth,fill=black, text=white, minimum height=0.07\paperheight,  below=0.17\paperheight, anchor=west] at (back.north west) (title) { \futurabold{#2}};
+	\node[text width = 0.8\paperwidth,text=black, below = 0.5cm, anchor =north west] at ([xshift=0.6cm, yshift=-1cm]card.north west) (res){#3};
+	\node [scale=4, text=#1] at ([xshift=-0.1cm, yshift=-0.1cm]res.north west){\quotefont{``}}; 
+	\node [scale=16, text=#1, anchor=north] at ([xshift=-0.7cm, yshift=1.6cm] res.south east)(endquote){\quotefont{''}}; 
+	\end{tikzpicture} 
+\end{center}
+}
+
 \mode<all>

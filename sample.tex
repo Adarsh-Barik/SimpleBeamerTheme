@@ -28,7 +28,7 @@
 \definecolor{DarkGold}{HTML}{C69318}
 % three styles light, dark and none
 % light is default
-\usetheme[style=none]{simple}
+\usetheme[style=light]{simple}
 
 \begin{document}
 
@@ -458,6 +458,20 @@ New algorithm & $O(n)$ & still slow \\}
 	}
 \end{frame}
 
+
+\begin{frame}
+	\mainresult{Our Main Result}{
+		Sometimes we want to dedicate one slide to show our result. This whole slide just shows our result, so that viewers can see it for a while and soak it. It should look beautiful.
+		}
+\end{frame}
+
+\begin{frame}
+	\mainresult[MyBlue]{Our Main Result In Blue}{
+		Of course we can change background color for this slide. We can make it blue for example and it still looks beautiful. We are focused -- viewers are focused -- Happiness. We can make it look like a profound quote. \\
+		\hfill \footnotesize{- Some wise man}
+	}
+\end{frame}
+
 \begin{frame}
 \vspace{2\baselineskip}
 \ribbon{MyOrange}{\futurabold \Huge How Does It Work?}
@@ -514,6 +528,10 @@ Define a bold and italic font:
 \begin{verbatim}
 \newfontfamily\futurabold{Futura-Bold}
 \newfontfamily\futuraitalic{Futura Std Book Oblique}
+\end{verbatim}
+Define a font for big quotation marks:
+\begin{verbatim}
+\newfontfamily\quotefont{Minotaur}
 \end{verbatim}
 \end{frame}
 
