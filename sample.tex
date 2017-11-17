@@ -519,21 +519,27 @@ and so on so forth.
 \end{frame}
 
 \begin{frame}[fragile]{Can I make changes?}
-Yes. You can change whatever you want. Mostly, you'd want to change the font. Go to file \verb|beamerinnerthemesimple.sty| and change fonts to the ones you like.
-\begin{verbatim}
-\setsansfont{Futura Book}
-\setmonofont{Monaco}
-\end{verbatim}
+\begin{center}
+	\alert{Yes. You can change whatever you want.} 
+\end{center}
+
+
+\fancybox[MyBlue]{What about Fonts?}{
+	I have provided all the used fonts in Fonts directory. As far as I know these are open-source fonts.
+}
+
+You can also go to \verb|beamerinnerthemesimple.sty| and change fonts to the ones you like.
+
 Define a bold and italic font:
 \begin{verbatim}
-\newfontfamily\fontbold{Futura-Bold}
-\newfontfamily\fontitalic{Futura Std Book Oblique}
+\newfontfamily\fontbold{<Your Bold Font Here>}
+\newfontfamily\fontitalic{<Your Italic Font Here>}
 \end{verbatim}
 Define a font for big quotation marks:
 \begin{verbatim}
-\newfontfamily\quotefont{Minotaur}
+\newfontfamily\quotefont{<Your Font For Quotation Mark Here>}
 \end{verbatim}
-\end{frame}
+\end{frame} 
 
 \begin{frame}
 	\vspace{2\baselineskip}

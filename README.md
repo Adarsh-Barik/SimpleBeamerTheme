@@ -39,7 +39,7 @@ Check any of the sample pdf to learn more about tools. You could do many things 
 9. Focused slide for main results
 
 ## Font
-I use `Futura` (sans) and `Monaco` (mono) but if you don't have those (or don't like) then feel free to change them in `beamerinnerthemesimple.sty` file. 
+I have provided all the used fonts in Fonts directory. As far as I know these are open-source fonts. You can change them in `beamerinnerthemesimple.sty` file. 
 
 ## Can I change it to suit my needs?
 Ofcourse you can. My preference may not be exactly same as yours. Play around, make changes or suggest changes - Everything is welcome.
